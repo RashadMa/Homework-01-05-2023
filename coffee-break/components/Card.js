@@ -42,7 +42,15 @@ const Card = () => {
         </TouchableOpacity>
       </View>
       {datas?.map((item) => (
-        <View key={item.id} style={[styles.cardHolder]}>
+        <View
+          key={item.id}
+          style={{
+            backgroundColor: item.color,
+            padding: 25,
+            borderRadius: 20,
+            marginVertical: 5,
+          }}
+        >
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.diseases}>{item.diseases} diseases</Text>
         </View>
@@ -52,12 +60,7 @@ const Card = () => {
 };
 
 const styles = StyleSheet.create({
-  cardHolder: {
-    backgroundColor: "#ec7563",
-    padding: 25,
-    borderRadius: 20,
-    marginVertical: 5,
-  },
+  cardHolder: {},
   title: {
     color: "#fffaf8",
     fontSize: 25,
